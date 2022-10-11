@@ -266,7 +266,8 @@ CREATE TABLE `members` (
   `webmaster` tinyint(4) NOT NULL,
   `qaco` tinyint(4) NOT NULL,
   `devco` tinyint(4) NOT NULL,
-  `slackID` varchar(20) DEFAULT NULL
+  `slackID` varchar(20) DEFAULT NULL,
+  `gradyear` smallint(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------

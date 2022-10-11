@@ -141,7 +141,7 @@ angular.module('EditMemberCtrl', []).controller('EditMemberCtrl', ['$scope', '$h
     ];
 
     var NUMBERS = [
-        'rin', 'radionum', 'emt_num'
+        'rin', 'radionum', 'emt_num', 'gradyear'
     ];
 
     var DATES = [

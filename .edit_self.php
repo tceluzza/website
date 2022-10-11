@@ -20,6 +20,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
   $home_phone = $input['hphone'];
   $home_address= $input['hadd'];
   $rpi_address = $input['add'];
+  $gradyear = $input['grad'];
   $sessionID = $input['session_id'];
 
 try {
@@ -33,7 +34,7 @@ try {
   $memberInfo = $statement->fetchAll(PDO::FETCH_ASSOC)[0];
   $memberId = $memberInfo['id'];
 
-  $statement = $connection->prepare("UPDATE members SET first_name=:first_name, last_name=:last_name, email=:email, cell_phone=:cell_phone, home_phone=:home_phone, rpi_address=:rpi_address, home_address=:home_address WHERE username = :username");
+  $statement = $connection->prepare("UPDATE members SET first_name=:first_name, last_name=:last_name, email=:email, cell_phone=:cell_phone, home_phone=:home_phone, rpi_address=:rpi_address, home_address=:home_address, gradyear=:gradyear WHERE username = :username");
   $statement->bindParam(':first_name', $first_name);
   $statement->bindParam(':last_name', $last_name);
   $statement->bindParam(':email', $email);
@@ -41,6 +42,7 @@ try {
   $statement->bindParam(':home_phone', $home_phone);
   $statement->bindParam(':rpi_address', $rpi_address);
   $statement->bindParam(':home_address', $home_address);
+  $statement->bindParam(':gradyear', $gradyear);
   $statement->bindParam(':username', $username);
 
   $result = $statement->execute();

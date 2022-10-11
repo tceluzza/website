@@ -11,6 +11,7 @@ angular.module('MySettingsCtrl', []).controller('MySettingsCtrl', ['$scope', '$h
         hphone: "",
         add: "",
         hadd: "",
+        grad: 0,
         session_id: ""
     }
 
@@ -27,6 +28,7 @@ angular.module('MySettingsCtrl', []).controller('MySettingsCtrl', ['$scope', '$h
             $scope.formData.hphone = data.home_phone;
             $scope.formData.add = data.rpi_address;
             $scope.formData.hadd = data.home_address;
+            $scope.formData.grad = parseInt(data.gradyear);
             $scope.dataReady = true;
         });
     }
